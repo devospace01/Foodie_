@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Delicious Food Delivered Fast</title>
+    <meta name="description"
+        content="Order your favorite meals from top-rated restaurants. Fast delivery, fresh food, and 24/7 service.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-utensils"></i> Foodie
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#menu">Hot Dishes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search dish...">
+                    </div>
+                    <div class="cart-icon" id="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="hero-content">
+            <h1>Eat today <br><span>Live another day</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi nec ex porta laoreet sit amet a
+                nulla.</p>
+
+            <div class="search-location">
+                <input type="text" placeholder="Enter your location...">
+                <button>Search</button>
+            </div>
+
+            <div class="hero-options">
+                <button class="btn-option active">Delivery</button>
+                <button class="btn-option">Pickup</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800"
+                alt="Delicious Food" class="main-img">
+            <div class="bg-shape"></div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container features">
+        <div class="feature-card">
+            <div class="icon"><i class="fas fa-bolt"></i></div>
+            <h3>Fastest Delivery</h3>
+            <p>Your food delivered in less than 30 minutes. Fresh and hot.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon"><i class="fas fa-clock"></i></div>
+            <h3>24/7 Service</h3>
+            <p>Hungry at 3 AM? We've got you covered anytime, anywhere.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon"><i class="fas fa-leaf"></i></div>
+            <h3>Fresh Food</h3>
+            <p>We only partner with the best and freshest ingredients.</p>
+        </div>
+    </section>
+
+    <!-- Stats/About -->
+    <section class="container stats-section" id="about">
+        <div class="stats-visual">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+                alt="Food Grid" style="border-radius: 30px;">
+        </div>
+        <div class="stats-content">
+            <h2>Our popular restaurants <span>1000+</span> Our delicious food</h2>
+            <p>Food is our life. We provide variety of dishes that will make you feel amazing. Our chefs are experts in
+                creating the perfect meal for you.</p>
+            <a href="#menu" class="btn-primary">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Delicious Menu</h2>
+                <p>Choose from our wide variety of dishes</p>
+            </div>
+
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="burger">Burger</button>
+                <button class="filter-btn" data-filter="pizza">Pizza</button>
+                <button class="filter-btn" data-filter="pasta">Pasta</button>
+                <button class="filter-btn" data-filter="steak">Steak</button>
+            </div>
+
+            <div class="food-grid" id="food-grid">
+                <!-- Food items will be dynamicly loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer -->
+    <section class="container stats-section">
+        <div class="stats-content">
+            <span style="color: var(--primary); font-weight: 700;">Special Deal</span>
+            <h2>Gobi Manchurian Ribs <br>Lamb and Mutton</h2>
+            <div style="font-size: 2rem; margin-bottom: 20px;">
+                <span style="font-weight: 800;">₹249</span>
+                <span
+                    style="text-decoration: line-through; color: #ccc; font-size: 1.2rem; margin-left: 10px;">₹359</span>
+            </div>
+            <button class="btn-primary" onclick="addToCart('Special Gobi Ribs', 249)">Add To Cart</button>
+        </div>
+        <div class="stats-visual">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600"
+                alt="Special Dish" style="border-radius: 30px;">
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="container" id="restaurants" style="padding: 80px 0;">
+        <div class="section-header">
+            <h2>Popular Restaurants</h2>
+            <p>Order from the best restaurants in town</p>
+        </div>
+        <div class="food-grid">
+            <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=400"
+                    alt="Restaurant 1" style="height: 180px; width: 100%; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3>The Burger Joint</h3>
+                    <p>4.9 <i class="fas fa-star" style="color: gold;"></i> (500+ reviews)</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Burgers • American • ₹</p>
+                </div>
+            </div>
+            <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=400"
+                    alt="Restaurant 2" style="height: 180px; width: 100%; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3>Pasta Paradiso</h3>
+                    <p>4.7 <i class="fas fa-star" style="color: gold;"></i> (350+ reviews)</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Italian • Pasta • ₹₹</p>
+                </div>
+            </div>
+            <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=400"
+                    alt="Restaurant 3" style="height: 180px; width: 100%; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3>Steak & Fire</h3>
+                    <p>4.8 <i class="fas fa-star" style="color: gold;"></i> (200+ reviews)</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Steakhouse • Grill • ₹₹₹</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="menu-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+            </div>
+            <div class="food-grid">
+                <div class="feature-card">
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; justify-content: center;">
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                    </div>
+                    <p>"Best food delivery app I've ever used. The food always arrives hot and fresh!"</p>
+                    <div style="margin-top: 20px; font-weight: 700;">- John Doe</div>
+                </div>
+                <div class="feature-card">
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; justify-content: center;">
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                    </div>
+                    <p>"Amazing variety of restaurants. The delivery is super fast, usually under 20 mins."</p>
+                    <div style="margin-top: 20px; font-weight: 700;">- Sarah Smith</div>
+                </div>
+                <div class="feature-card">
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; justify-content: center;">
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star" style="color: gold;"></i>
+                        <i class="fas fa-star-half-alt" style="color: gold;"></i>
+                    </div>
+                    <p>"Great customer support. I had an issue with my order and they fixed it instantly."</p>
+                    <div style="margin-top: 20px; font-weight: 700;">- Mike Johnson</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        I got the wrong food, what should I do?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Please contact our support team immediately. We will rectify the issue and provide a refund or
+                        replacement as soon as possible.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        My food hasn't arrived yet. What should I do?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You can track your order in real-time through the app or website. If it's delayed beyond the
+                        estimated time, please call our delivery support.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I cancel my order?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Orders can be cancelled within 5 minutes of placing them. After that, the restaurant starts
+                        preparing your meal.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="container stats-section"
+        style="background: #FFF5F2; border-radius: 50px; padding: 50px; margin-top: 50px;">
+        <div class="stats-visual">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=400"
+                alt="App Mockup" style="max-width: 300px; margin: 0 auto;">
+        </div>
+        <div class="stats-content">
+            <h2>Download the foodie App</h2>
+            <p>Get the best experience on your mobile. Order faster and get exclusive deals.</p>
+            <div style="display: flex; gap: 15px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play" width="150">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                    alt="App Store" width="150">
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Member Section -->
+    <section class="container" style="margin-top: 80px; margin-bottom: 80px;">
+        <div
+            style="background: var(--secondary); border-radius: 50px; padding: 60px; text-align: center; color: white; position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 2;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Join our member and get <br>discount up to 50%</h2>
+                <div class="newsletter-form" style="display: flex; gap: 10px; max-width: 500px; margin: 30px auto 0;">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input"
+                        style="padding: 15px 25px; border-radius: 50px; border: none; outline: none; flex: 1; font-size: 1rem;">
+                    <button class="newsletter-btn"
+                        style="background: var(--primary); color: white; border: none; padding: 15px 40px; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 1rem;">Join</button>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div
+                style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">Foodie</div>
+                    <p style="color: #aaa;">Making food delivery fast, fresh, and easy for everyone.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Pickup</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="#">info@foodie.com</a></li>
+                        <li><a href="#">+1 234 567 890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodie. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Cart</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div id="cart-items-list">
+                <!-- Cart items will be here -->
+                <p style="text-align: center; color: #888; padding: 20px;">Your cart is empty</p>
+            </div>
+            <div class="modal-footer">
+                <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: 700; font-size: 1.2rem;">
+                    <span>Total:</span>
+                    <span id="cart-total">₹255.00</span>
+                </div>
+                <button class="btn-primary" style="width: 100%;">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
